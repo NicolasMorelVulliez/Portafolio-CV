@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 
 export function PageIntro({
-  eyebrow,
+
   title,
   children,
   centered = false,
@@ -21,7 +21,6 @@ export function PageIntro({
       <FadeIn>
         <h1>
           <span className="block font-display text-base font-semibold text-neutral-950">
-            {eyebrow}
           </span>
           <span className="sr-only"> - </span>
           <span

@@ -1,7 +1,7 @@
 import { type ImageProps } from 'next/image'
 import glob from 'fast-glob'
 
-async function loadEntries<T extends { date: string }>(
+async function loadEntries<T extends { date: string ; href: string}>(
   directory: string,
   metaName: string,
 ): Promise<Array<MDXEntry<T>>> {
@@ -15,7 +15,7 @@ async function loadEntries<T extends { date: string }>(
           return {
             ...metadata,
             metadata,
-            href: `/${directory}/${filename.replace(/\/page\.mdx$/, '')}`,
+            href: metadata.href ?? '#'
           }
         },
       ),
@@ -25,10 +25,11 @@ async function loadEntries<T extends { date: string }>(
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
 
-export type MDXEntry<T> = T & { href: string; metadata: T }
+export type MDXEntry<T> = T & {metadata: T }
 
 export interface Article {
   date: string
+  href: string
   title: string
   description: string
   author: {
@@ -40,6 +41,7 @@ export interface Article {
 
 export interface CaseStudy {
   date: string
+  href: string
   client: string
   title: string
   description: string

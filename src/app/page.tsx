@@ -22,14 +22,14 @@ import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
 const clients = [
-  ['Phobia', logoPhobiaLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['React', logoPhobiaLight],
+  ['NodeJs', logoFamilyFund],
+  ['NextJs', logoUnseal],
+  ['Java', logoMailSmirk],
+  ['MySql', logoHomeWork],
+  ['MongoDB', logoGreenLife],
+  ['HTML5', logoBrightPath],
+  ['CSS3', logoNorthAdventures],
 ]
 
 function Clients() {
@@ -37,8 +37,8 @@ function Clients() {
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with hundreds of amazing people
+          <h2 className="text-center font-display text-3xl font-semibold tracking-wider text-white sm:text-left">
+          Tech Stack
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -50,7 +50,8 @@ function Clients() {
             {clients.map(([client, logo]) => (
               <li key={client}>
                 <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
+                  <Image className="text-center font-display text-1xl font-semibold tracking-wider text-white sm:text-left" alt={client} unoptimized />
+                  {/*<Image src={logo} alt={client} unoptimized />*/}
                 </FadeIn>
               </li>
             ))}
@@ -69,13 +70,11 @@ function CaseStudies({
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        title="My Proyects"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
-        <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+        <p >
+          You can check more on my github 
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -104,7 +103,7 @@ function CaseStudies({
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>Case study</span>
+                  <span>Proyect</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
@@ -121,7 +120,7 @@ function CaseStudies({
   )
 }
 
-function Services() {
+{/*function Services() {
   return (
     <>
       <SectionIntro
@@ -170,7 +169,7 @@ function Services() {
       </Container>
     </>
   )
-}
+}*/}
 
 export const metadata: Metadata = {
   description:
@@ -185,12 +184,11 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Award-winning development studio based in Denmark.
+            Nicolas Morel Vulliez
           </h1>
+          <h2 className=' text-3xl'>Software Engineering</h2>
           <p className="mt-6 text-xl text-neutral-600">
-            We are a development studio working at the intersection of design
-            and technology. It’s a really busy intersection though — a lot of
-            our staff have been involved in hit and runs.
+            I'm a software engineering student in my final years, and I'm excited to kickstart my career as a software engineer. With a strong background in software development and a keen interest in hardware systems, I bring a unique perspective to the table. Eager to apply my skills and contribute to impactful projects, I thrive on challenges and am committed to continuous growth in the ever-evolving technology field.
           </p>
         </FadeIn>
       </Container>
@@ -198,17 +196,9 @@ export default async function Home() {
       <Clients />
 
       <CaseStudies caseStudies={caseStudies} />
-
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
-      >
-        The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user’s microphone without triggering one of
-        those annoying permission dialogs.
-      </Testimonial>
-
-      <Services />
+      
+      {/* <Services /> */}
+      
 
       <ContactSection />
     </>
