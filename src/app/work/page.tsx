@@ -111,7 +111,7 @@ function Clients() {
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-        Technology used in my projects.
+        Technology used in my projects. 
         </h2>
       </FadeIn>
       <FadeInStagger className="mt-10" faster>
@@ -147,8 +147,7 @@ export default async function Work() {
   return (
     <>
       <PageIntro
-        title="Some of my proyect"
-      >
+        title="Some of my proyect" eyebrow={''} children={undefined}      >
         
       </PageIntro>
 

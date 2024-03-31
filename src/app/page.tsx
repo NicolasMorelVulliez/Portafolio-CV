@@ -50,7 +50,7 @@ function Clients() {
             {clients.map(([client, logo]) => (
               <li key={client}>
                 <FadeIn>
-                  <Image className="text-center font-display text-1xl font-semibold tracking-wider text-white sm:text-left" alt={client} unoptimized />
+                  {/*<Image className="text-center font-display text-1xl font-semibold tracking-wider text-white sm:text-left" alt={client} unoptimized />*/}
                   {/*<Image src={logo} alt={client} unoptimized />*/}
                 </FadeIn>
               </li>
